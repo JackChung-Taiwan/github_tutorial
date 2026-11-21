@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phonics 拼字小遊戲</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <script defer src="./game.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Phonics 拼字小遊戲</h1>
+    <p id="counter">讀取題庫中…</p>
+    <p id="tip"></p>
+    <p><strong>拼讀線索：</strong><span id="chunks"></span></p>
+    <div class="actions"><button id="speak" type="button" disabled>播放英文</button></div>
+    <p id="speech-status" role="status"></p>
+    <form id="spelling">
+      <label for="answer">輸入英文拼字</label>
+      <div class="answer-row"><input id="answer" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="30" disabled>
+        <button id="check" disabled>檢查答案</button></div>
+    </form>
+    <div class="actions">
+      <button id="next" type="button" disabled>下一題</button>
+      <button id="restart" type="button" hidden>再玩一次</button>
+    </div>
+    <p id="feedback" role="status"></p>
+  </main>
+</body>
+</html>

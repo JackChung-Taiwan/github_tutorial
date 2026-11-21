@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="從 GitHub Desktop 到 AI 遊戲開發，12 堂互動課帶你完成自己的程式作品。">
+  <meta name="theme-color" content="#22163a">
+  <title>GitHub 程式冒險學院</title>
+  <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="module" src="./js/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要內容</a>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="#home" aria-label="GitHub 程式冒險學院首頁"><svg aria-hidden="true"><use href="./assets/images/icons.svg#brand"/></svg><span>GitHub <b>程式冒險學院</b></span></a>
+      <button class="menu btn btn-light" id="menu" type="button" aria-expanded="false" aria-controls="top-nav">選單</button>
+      <nav id="top-nav" aria-label="網站導覽">
+        <a href="#map">冒險地圖</a><a href="#gallery">作品展示</a><a href="#resources">資源下載</a>
+        <a class="nav-start" href="#lesson-1" data-continue>開始冒險</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <div id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap hero-inner">
+          <div class="hero-copy">
+            <h1 id="hero-title"><span>GitHub</span><br>程式冒險學院</h1>
+            <p>從 GitHub Desktop 到 AI 遊戲開發，<br class="desktop-break">12 堂課打造自己的程式作品！</p>
+            <div class="actions">
+              <a class="btn btn-green" href="#lesson-1" data-continue><svg aria-hidden="true"><use href="./assets/images/icons.svg#play"/></svg>開始冒險</a>
+              <a class="btn btn-light" href="#map">查看冒險地圖</a>
+            </div>
+          </div>
+          <img class="hero-scene" src="./assets/images/adventure.svg" width="680" height="440" alt="">
+        </div>
+      </section>
+      <div class="wrap home-body">
+        <section class="progress-card" aria-labelledby="progress-title">
+          <span class="icon-tile progress-icon"><svg aria-hidden="true"><use href="./assets/images/icons.svg#flag"/></svg></span>
+          <div class="progress-main">
+            <div class="progress-row"><h2 id="progress-title">我的冒險進度</h2><strong data-count>0 / 12 堂課</strong></div>
+            <progress id="overall-progress" aria-labelledby="progress-title" value="0" max="12"></progress>
+          </div>
+          <a class="progress-link" href="#achievements">成就徽章 <span aria-hidden="true">›</span></a>
+        </section>
+        <section id="map" class="section" aria-labelledby="map-title">
+          <div class="section-heading"><span class="icon-tile"><svg aria-hidden="true"><use href="./assets/images/icons.svg#map"/></svg></span><h2 id="map-title">冒險地圖</h2></div>
+          <div class="map-controls">
+            <div class="filters" role="group" aria-label="課程階段"></div>
+            <label class="search"><svg aria-hidden="true"><use href="./assets/images/icons.svg#search"/></svg><input id="search" type="search" placeholder="搜尋課程或工具…" aria-label="搜尋課程或工具"></label>
+          </div>
+          <div class="map-grid" id="lesson-map"></div>
+          <p id="map-message" role="status" hidden>找不到符合的課程。試試 Git、音效或部署。</p>
+        </section>
+        <section id="tools" class="section" aria-labelledby="tools-title">
+          <div class="section-heading"><span class="icon-tile"><svg aria-hidden="true"><use href="./assets/images/icons.svg#box"/></svg></span><h2 id="tools-title">冒險工具箱</h2></div>
+          <div id="tool-grid" class="tool-grid"></div>
+        </section>
+        <section id="gallery" class="section" aria-labelledby="gallery-title">
+          <div class="section-heading"><span class="icon-tile"><svg aria-hidden="true"><use href="./assets/images/icons.svg#star"/></svg></span><h2 id="gallery-title">學生作品展示</h2></div>
+          <p>先玩課程示範，再加入你的作品。作品卡會儲存在這個瀏覽器。</p>
+          <div id="example-gallery" class="gallery-grid"></div>
+          <div class="box portfolio">
+            <h3>我的作品集</h3>
+            <form id="portfolio-form">
+              <label>作品名稱<input name="name" maxlength="60" required placeholder="例：我的第一個網站"></label>
+              <label>作品公開網址<input name="url" type="url" maxlength="1000" required placeholder="https://…"></label>
+              <button class="btn btn-green">加入作品</button>
+            </form>
+            <p id="portfolio-status" role="status"></p>
+            <ul id="portfolio-list"></ul>
+          </div>
+        </section>
+        <section id="resources" class="section" aria-labelledby="resources-title">
+          <div class="section-heading"><span class="icon-tile"><svg aria-hidden="true"><use href="./assets/images/icons.svg#download"/></svg></span><h2 id="resources-title">課程資源下載</h2></div>
+          <div id="downloads" class="resource-grid"></div>
+        </section>
+        <section id="pages" class="section" aria-labelledby="pages-title">
+          <div class="section-heading"><span class="icon-tile"><svg aria-hidden="true"><use href="./assets/images/icons.svg#globe"/></svg></span><h2 id="pages-title">把網站發布到 GitHub Pages</h2></div>
+          <div class="box pages-card">
+            <p>推送含 <code>index.html</code> 的 <code>main</code> 分支後，在 GitHub 網站依序開啟下列設定。</p>
+            <ol class="flow"><li>Settings</li><li>Pages</li><li>Deploy from a branch</li><li>main</li><li>/(root)</li><li>Save</li></ol>
+            <p>發布完成後，打開 <code>https://使用者名稱.github.io/Repository名稱/</code>。</p>
+            <a class="btn btn-green" href="#lesson-4">開啟第 4 堂</a>
+          </div>
+        </section>
+        <section id="faq" class="section" aria-labelledby="faq-title">
+          <div class="section-heading"><span class="icon-tile"><svg aria-hidden="true"><use href="./assets/images/icons.svg#book"/></svg></span><h2 id="faq-title">常見問題</h2></div>
+          <div id="faq-items"></div>
+        </section>
+        <section id="achievements" class="section" aria-labelledby="achievement-title">
+          <div class="section-heading"><span class="icon-tile"><svg aria-hidden="true"><use href="./assets/images/icons.svg#star"/></svg></span><h2 id="achievement-title">成就徽章</h2></div>
+          <div id="badge-grid" class="badge-grid"></div>
+          <button class="btn btn-light reset-btn" type="button" id="reset-progress">清除學習進度</button>
+        </section>
+      </div>
+    </div>
+    <section class="wrap lesson-layout" id="lesson-view" aria-label="課程" hidden>
+      <aside aria-label="課程索引">
+        <div class="sidebar">
+          <a href="#map" class="back-link">‹ 回冒險地圖</a>
+          <p data-count>0 / 12 堂課</p>
+          <details id="lesson-menu"><summary>課程導覽</summary><nav id="lesson-nav" aria-label="12 堂課"></nav></details>
+        </div>
+      </aside>
+      <article id="lesson-content" class="lesson-content"></article>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><div><b>GitHub 程式冒險學院</b><br>社團法人台灣資訊教育發展協會</div><div><a href="#faq">常見問題</a><a href="https://github.com/JackChung-Taiwan/github_tutorial">GitHub 原始碼</a></div></div></footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

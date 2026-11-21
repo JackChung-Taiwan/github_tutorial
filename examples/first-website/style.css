@@ -1,0 +1,21 @@
+:root {color-scheme:light;font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif}
+* {box-sizing:border-box}
+body {margin:0;background:#ede6fa;color:#271a39}
+main {width:min(700px,100% - 24px);margin:12px auto;padding:clamp(.75rem,3vw,1.35rem);border:2px solid #b69bdb;border-radius:10px;background:#fffdf5}
+h1 {margin:0;font-size:clamp(1.35rem,5vw,2rem);line-height:1.2}
+p {margin:.55rem 0;line-height:1.5}
+button,input {font:inherit}
+button {font-weight:800;color:#fff;background:#6528ad;border:2px solid #411773;border-radius:6px;box-shadow:0 3px #411773;min-height:43px;padding:.35rem .65rem;cursor:pointer}
+button:active:not(:disabled) {transform:translateY(2px);box-shadow:0 1px #411773}
+button:disabled {opacity:.6;cursor:default}
+button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visible {outline:3px solid #1364ad;outline-offset:3px}
+[hidden] {display:none!important}
+.actions {display:flex;flex-wrap:wrap;gap:.5rem}
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after {animation:none!important;transition:none!important} }
+.eyebrow {color:#5d2b8b;font-weight:900}
+.scene {min-height:125px;display:grid;place-items:center;background:repeating-linear-gradient(90deg,#60a746 0 20px,#75b551 20px 40px);border:3px solid #285426;border-radius:7px}
+.scene span {font-size:3.5rem}
+body[data-dark="true"] {background:#221630;color:#fff0d3}
+body[data-dark="true"] main {background:#36264b}
+body[data-dark="true"] .eyebrow {color:#e0b4ff}
+body[data-dark="true"] .scene {background:#334b68;border-color:#809bd2}

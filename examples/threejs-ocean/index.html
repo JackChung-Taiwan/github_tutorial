@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Three.js 3D 海底世界</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/core/three.module.min.js",
+        "three/addons/": "./vendor/addons/"
+      }
+    }
+  </script>
+  <script type="module" src="./ocean.js"></script>
+</head>
+<body>
+  <main>
+    <h1>3D 海底世界</h1>
+    <p>滑鼠或手指拖曳旋轉視角，滾輪或雙指縮放。</p>
+    <div class="actions" aria-label="相機控制">
+      <button id="left" type="button" disabled>向左轉</button>
+      <button id="right" type="button" disabled>向右轉</button>
+      <button id="spin" type="button" aria-pressed="false" disabled>暫停模型旋轉</button>
+    </div>
+    <figure id="ocean" aria-label="3D 海床與潛水艇"></figure>
+    <p id="status" role="status">載入海底世界…</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,23 @@
+:root {color-scheme:light;font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif}
+* {box-sizing:border-box}
+body {margin:0;background:#ede6fa;color:#271a39}
+main {width:min(700px,100% - 24px);margin:12px auto;padding:clamp(.75rem,3vw,1.35rem);border:2px solid #b69bdb;border-radius:10px;background:#fffdf5}
+h1 {margin:0;font-size:clamp(1.35rem,5vw,2rem);line-height:1.2}
+p {margin:.55rem 0;line-height:1.5}
+button,input {font:inherit}
+button {font-weight:800;color:#fff;background:#6528ad;border:2px solid #411773;border-radius:6px;box-shadow:0 3px #411773;min-height:43px;padding:.35rem .65rem;cursor:pointer}
+button:active:not(:disabled) {transform:translateY(2px);box-shadow:0 1px #411773}
+button:disabled {opacity:.6;cursor:default}
+button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visible {outline:3px solid #1364ad;outline-offset:3px}
+[hidden] {display:none!important}
+.actions {display:flex;flex-wrap:wrap;gap:.5rem}
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after {animation:none!important;transition:none!important} }
+.scorebar {display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:.75rem}
+#game {width:min(100%,370px);display:grid;grid-template-columns:repeat(7,1fr);gap:2px;border:3px solid #245122;background:#285426;border-radius:6px;padding:3px}
+.cell {aspect-ratio:1.55;position:relative;background:#9ed970}
+.cell:nth-child(even) {background:#83c55b}
+.cell[data-piece=player]::before,.cell[data-piece=coin]::before {content:"";position:absolute;inset:18% 22%;background:#5230b5;border:2px solid #211658;box-shadow:2px 2px #0005}
+.cell[data-piece=coin]::before {inset:14% 27%;background:#ffca39;border-color:#855921;border-radius:50%;box-shadow:inset 0 0 0 2px #ffe783,2px 2px #0005}
+.dpad {display:flex;gap:.45rem;flex-wrap:wrap}
+.dpad button {min-width:44px;touch-action:manipulation}
+#position {min-height:1.5em}

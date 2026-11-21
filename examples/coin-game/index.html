@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>金幣收集遊戲</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <script defer src="./game.js"></script>
+</head>
+<body>
+  <main>
+    <h1>金幣收集遊戲</h1>
+    <p id="instructions">收滿 5 枚金幣。可用方向鍵、WASD 或下方方向按鈕。</p>
+    <div class="scorebar"><strong id="score">金幣 0 / 5</strong><button id="start" type="button">開始遊戲</button></div>
+    <div id="game" tabindex="0" role="group" aria-label="金幣遊戲棋盤" aria-describedby="instructions position"></div>
+    <p id="position" role="status">可以開始了！</p>
+    <div class="dpad" aria-label="移動方向">
+      <button type="button" data-move="up" aria-label="上" disabled>↑</button>
+      <button type="button" data-move="left" aria-label="左" disabled>←</button>
+      <button type="button" data-move="down" aria-label="下" disabled>↓</button>
+      <button type="button" data-move="right" aria-label="右" disabled>→</button>
+    </div>
+  </main>
+</body>
+</html>
