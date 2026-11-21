@@ -135,9 +135,9 @@ function renderLesson(lesson) {
       `<li><strong>${escape(title)}</strong><p>${escape(description)}</p></li>`).join('')}</ol>
       <figure class="step-diagram"><figcaption>操作路線</figcaption><ol class="flow">
       ${lesson.flow.map(step => `<li>${escape(step)}</li>`).join('')}</ol></figure></div>`)}
-    ${panel('範例程式與 Codex 提示詞', `<h3>${escape(lesson.filename)}</h3><pre><code>${escape(lesson.code)}</code></pre>
-      <h3>Codex 提示詞</h3><pre id="prompt-code" tabindex="0"><code>${escape(lesson.prompt)}</code></pre>
-      <div class="actions"><button class="btn btn-gold" id="copy-prompt" type="button">複製 Codex 提示詞</button>
+    ${panel('範例程式與 Gemini 提示詞', `<h3>${escape(lesson.filename)}</h3><pre><code>${escape(lesson.code)}</code></pre>
+      <h3>Gemini 提示詞</h3><pre id="prompt-code" tabindex="0"><code>${escape(lesson.prompt)}</code></pre>
+      <div class="actions"><button class="btn btn-gold" id="copy-prompt" type="button">複製 Gemini 提示詞</button>
       ${example ? `<a class="btn btn-purple" href="./downloads/${example.dir}.zip" download>下載完整範例</a>
       <a class="btn btn-light" href="./examples/${example.dir}/">開啟獨立範例</a>` : ''}</div>
       ${example && lesson.id !== 2 ? `<iframe class="demo-frame" title="${example.name}" src="./examples/${example.dir}/" loading="lazy"></iframe>` : ''}`)}
